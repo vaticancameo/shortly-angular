@@ -8,15 +8,21 @@
   </ul>
     
   </div>
-  <br> </br>
-  <div>
-  <input type="text" ng-model="search" placeholder="search">
-  <h3>Links</h3>
-  <ul>
-  <li ng-repeat="link in data.links | orderBy: '-visits' | filter: search" >
-  {{ link.url }} {{link.title}} {{link.visits}}
-  <a href="api/links/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
-  </li>
-  </ul>
-  <div>
+  <div id="container">
+  <h2>Search</h2>
+  <input class="search" type="text" ng-model="search" placeholder="search">
+  <h2>Links</h2>
+  <div class='links'>
+    <div class="link" ng-repeat="link in data.links | orderBy: '-visits' | filter: search" >
+    <img src="assets/redirect_icon.png">
+      <div class="info"> 
+        <div class="visits"><span class='count'>{{link.visits}}</span> Visits</div>
+        <div class="title">{{link.title}}</div>
+        <div class="original">{{ link.url }}</div>
+        <a href="api/links/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+      </div>
+    </div>
+  </div>
 </div>
+
+

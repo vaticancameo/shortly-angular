@@ -11,7 +11,8 @@
     <input class="text" type="text" name="url" ng-model="link.url">
     <input type="submit" value="shorten">
   </form>
+  <img ng-if="submit" class='spinner' src='../assets/spiffygif_46x46.gif'>
   <div ng-if="invalid">Not a valid url</div>
-  <img class='spinner' src='../assets/spiffygif_46x46.gif'>
+ 
   <div class='message'></div>
 </div>
