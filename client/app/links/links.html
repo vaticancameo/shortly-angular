@@ -1,0 +1,9 @@
+<div id='container' ng-init="getLinks()">
+  <!-- Your html here -->
+  <ul>
+  <li ng-repeat="link in data.links " >
+  {{ link.url }} {{link.title}} {{link.visits}}
+  <a href=" {{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+  </li>
+  </ul>
+</div>
