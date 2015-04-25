@@ -6,4 +6,6 @@
     <button>signup</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+  <div ng-if="signupInvalid">Not a valid username or password.</div>
+  <div ng-if="signupUnavailable">That username is unavailable.</div>
 </div>

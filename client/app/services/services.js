@@ -21,7 +21,6 @@ angular.module('shortly.services', [])
       console.log('-----------------data follows------/n', resp.data);
       return resp.data;
     });
-  }
   };
 
   return {
@@ -68,12 +67,17 @@ angular.module('shortly.services', [])
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };
-
+  
+  var clearForms = function (user) {
+    user.username = "";
+    user.password = "";
+  };
 
   return {
     signin: signin,
     signup: signup,
     isAuth: isAuth,
     signout: signout,
+    clearForms: clearForms
   };
 });
